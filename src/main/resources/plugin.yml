@@ -1,0 +1,8 @@
+name: CSellStick
+version: '${version}'
+main: dev.crius.csellstick.CSellStickPlugin
+api-version: 1.19
+softdepend: [ Vault, PlayerPoints, SuperiorSkyblock2, BentoBox, DecentHolograms, HolographicDisplays, ShopGUIPlus, GUIShop ]
+authors: [ CriusDevelopment, hyperion ]
+description: A custom sell stick plugin made by CriusDevelopment
+website: https://crius.dev

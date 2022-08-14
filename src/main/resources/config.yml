@@ -1,0 +1,19 @@
+Settings:
+  allow-coops-to-sell: true
+
+Hologram-Lines:
+  - "&aSold x<amount> <item>"
+
+Sell-Sticks:
+
+  Example-Stick:
+    material: "DIAMOND" # material to sell, not stick's material.
+
+    displayName: "<yellow>Sell Stick <gray>- <gold><material>"
+    lore:
+      - "<gray>This stick sells all the <material>s in the chest!"
+      - ""
+      - "<gray>Left-Click to a chest to sell whats inside."
+
+Messages:
+  sold: "<green>Successfully sold x<amount> <item>"
