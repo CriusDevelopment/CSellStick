@@ -1,6 +1,6 @@
 name: CSellStick
 version: '${version}'
-main: dev.crius.csellstick.CSellStickPlugin
+main: dev.crius.sellstick.SellStickPlugin
 api-version: 1.19
 softdepend: [ Vault, PlayerPoints, SuperiorSkyblock2, BentoBox, DecentHolograms, HolographicDisplays, ShopGUIPlus, GUIShop ]
 authors: [ CriusDevelopment, hyperion ]

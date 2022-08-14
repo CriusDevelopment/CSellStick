@@ -74,7 +74,7 @@ shadowJar {
 
     archiveFileName = "${archiveBaseName.get()} v${archiveVersion.get()}.jar"
 
-    relocate 'dev.triumphteam', 'dev.crius.dropcollector.thirdparty.dev.triumphteam'
+    relocate 'dev.triumphteam', 'dev.crius.sellstick.thirdparty.dev.triumphteam'
 
     from sourceSets.getByName("main").output
     configurations = [project.configurations.getByName("runtimeClasspath")]
