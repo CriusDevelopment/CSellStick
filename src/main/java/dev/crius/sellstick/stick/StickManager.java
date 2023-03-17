@@ -34,12 +34,12 @@ public class StickManager {
 
             ItemStack item = ItemBuilder.from(Material.BLAZE_ROD)
                     .name(ChatUtils.format(section.getString(key + ".displayName"),
-                            Placeholder.unparsed("<material>", ItemUtils.fancyName(material))))
+                            Placeholder.unparsed("material", ItemUtils.fancyName(material))))
                     .lore(ChatUtils.format(section.getStringList(key + ".lore"),
-                            Placeholder.unparsed("<material>", ItemUtils.fancyName(material))))
+                            Placeholder.unparsed("material", ItemUtils.fancyName(material))))
                     .glow()
-                    .setNbt("crius:sellstick", true)
-                    .setNbt("crius:sellstick:material", material.name())
+                    .setNbt("sellstick", true)
+                    .setNbt("sellstick_material", material.name())
                     .build();
 
             sellStickMap.put(material, new SellStick(material, item));
@@ -54,17 +54,17 @@ public class StickManager {
         if (stick == null) return null;
 
         return Material.valueOf(stick.getItemMeta().getPersistentDataContainer()
-                .get(new NamespacedKey(plugin, "crius:sellstick:material"), PersistentDataType.STRING));
+                .get(new NamespacedKey(plugin, "sellstick_material"), PersistentDataType.STRING));
     }
 
     public boolean isValidStick(ItemStack stick) {
         if (stick == null) return false;
         if (stick.getType() != Material.BLAZE_ROD) return false;
         if (stick.getItemMeta() == null) return false;
-        if (!stick.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(plugin, "crius:sellstick"))) return false;
+        if (!stick.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(plugin, "sellstick"))) return false;
 
         Material material = Material.valueOf(stick.getItemMeta().getPersistentDataContainer()
-                .get(new NamespacedKey(plugin, "crius:sellstick:material"), PersistentDataType.STRING));
+                .get(new NamespacedKey(plugin, "sellstick_material"), PersistentDataType.STRING));
 
         return this.isValid(material);
     }

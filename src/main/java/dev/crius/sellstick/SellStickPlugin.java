@@ -87,7 +87,13 @@ public final class SellStickPlugin extends JavaPlugin {
         if (regionHook == null || shopHook == null || economyHook == null || hologramHook == null) {
             this.getLogger().severe("Could not setup correctly, please install required plugins.");
             pluginManager.disablePlugin(this);
+            return;
         }
+
+        economyHook.init();
+        regionHook.init();
+        shopHook.init();
+        hologramHook.init();
     }
 
 }

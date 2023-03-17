@@ -38,14 +38,14 @@ public class InteractListener implements Listener {
             }
         }
 
-        double price = plugin.getShopHook().getPrice(material, 0);
+        double price = plugin.getShopHook().getPrice(material, 10);
         double total = amount * price;
 
         plugin.getEconomyHook().add(player, total);
 
         player.sendMessage(ChatUtils.format(plugin.getPluginConfig().getString("Messages.sold"),
-                Placeholder.unparsed("<item>", ItemUtils.fancyName(material)),
-                Placeholder.unparsed("<amount>", String.valueOf(amount))
+                Placeholder.unparsed("item", ItemUtils.fancyName(material)),
+                Placeholder.unparsed("amount", String.valueOf(amount))
         ));
 
         plugin.getHologramHook().spawnHologram(
